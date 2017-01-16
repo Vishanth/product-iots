@@ -449,6 +449,15 @@
             </includes>
         </fileSet>
 
+		<!-- Copying Authentication Endpoint webapp -->
+		<fileSet>
+			<directory>
+				../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/devicetypes
+			</directory>
+			<outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/devicetypes
+			</outputDirectory>
+		</fileSet>
+
         <!-- Copying mdm app from devicemgt app-->
         <fileSet>
             <directory>
@@ -472,6 +481,42 @@
             </directory>
             <outputDirectory>
                 ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/devicemgt
+            </outputDirectory>
+        </fileSet>
+
+        <!-- Copying windows-web-agent-->
+        <fileSet>
+            <directory>
+                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/jaggeryapps/windows-web-agent/
+            </directory>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/windows-web-agent
+            </outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>
+                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/jaggeryapps/uuf-template-app/
+            </directory>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/windows-web-agent
+            </outputDirectory>
+        </fileSet>
+
+        <!-- Copying android-web-agent-->
+        <fileSet>
+            <directory>
+                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/jaggeryapps/android-web-agent/
+            </directory>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/android-web-agent
+            </outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>
+                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/jaggeryapps/uuf-template-app/
+            </directory>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/android-web-agent
             </outputDirectory>
         </fileSet>
 
@@ -537,6 +582,16 @@
             </excludes>
         </fileSet>
 
+        <!-- Copying Windows Synapse files -->
+        <fileSet>
+            <directory>
+                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/synapse-configs/default/api/
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/synapse-configs/default/api/
+            </outputDirectory>
+        </fileSet>
+
+
         <!--============ Added with API Features ===============-->
         <fileSet>
             <directory>src/api-resources/customsequences</directory>
@@ -550,6 +605,23 @@
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/resources/default-tiers</outputDirectory>
             <includes>
                 <include>**/**.xml</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>src/repository/resources/web-apps</directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>api-application-registration.war</include>
+                <include>api#device-mgt#v1.0.war</include>
+                <include>api#scep-mgt#v1.0.war</include>
+                <include>client-registration#v0.11.war</include>
+                <include>secured-websocket.war</include>
+                <include>api#certificate-mgt#v1.0.war</include>
+                <include>api#identity#entitlement.war</include>
+                <include>authenticationendpoint.war</include>
+                <include>oauth2.war</include>
+                <include>shindig.war</include>
             </includes>
         </fileSet>
 
@@ -1256,6 +1328,48 @@
             </outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>src/repository/jaggeryapps/api-store/jaggery.conf</source>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/api-store/
+            </outputDirectory>
+            <fileMode>755</fileMode>
+        </file>
+        <file>
+            <source>src/repository/jaggeryapps/devicemgt/jaggery.conf</source>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/devicemgt/
+            </outputDirectory>
+            <fileMode>755</fileMode>
+        </file>
+        <file>
+            <source>src/repository/jaggeryapps/portal/jaggery.conf</source>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/portal/
+            </outputDirectory>
+            <fileMode>755</fileMode>
+        </file>
+        <file>
+            <source>src/repository/jaggeryapps/publisher/jaggery.conf</source>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/publisher/
+            </outputDirectory>
+            <fileMode>755</fileMode>
+        </file>
+        <file>
+            <source>src/repository/jaggeryapps/social/jaggery.conf</source>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/social/
+            </outputDirectory>
+            <fileMode>755</fileMode>
+        </file>
+        <file>
+            <source>src/repository/jaggeryapps/store/jaggery.conf</source>
+            <outputDirectory>
+                ${pom.artifactId}-${pom.version}/repository/deployment/server/jaggeryapps/store/
+            </outputDirectory>
+            <fileMode>755</fileMode>
         </file>
     </files>
 </assembly>
